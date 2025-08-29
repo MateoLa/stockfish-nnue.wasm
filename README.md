@@ -1,6 +1,6 @@
 <div align="center">
 
-	[![Stockfish][https://stockfishchess.org/images/logo/icon_128x128.png]]
+	[![Stockfish](https://stockfishchess.org/images/logo/icon_128x128.png)]
 
 	<h3>Stockfish</h3>
 
@@ -48,7 +48,7 @@ If you use the "minify_js" option, the version is compiled with warnings.
 
 
 
-## Acknowledgements
+### Acknowledgements
 
 Thanks to the [Stockfish](https://github.com/official-stockfish/Stockfish) team and all its contributors.
 
