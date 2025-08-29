@@ -1,6 +1,6 @@
 <div align="center">
 
-	[https://stockfishchess.org/images/logo/icon_128x128.png](https://stockfishchess.org)
+	[stockfish128-logo](https://stockfishchess.org)
 
 	<h3>Stockfish</h3>
 
@@ -53,3 +53,5 @@ If you use the "minify_js" option, the version is compiled with warnings.
 Thanks to the [Stockfish](https://github.com/official-stockfish/Stockfish) team and all its contributors.
 
 The nnue-wasm compilation method (emscripten directory && Makefile) are based on [Hiroshi Ogawa](https://github.com/hi-ogawa/Stockfish) github repo.
+
+[stockfish128-logo]: https://stockfishchess.org/images/logo/icon_128x128.png
