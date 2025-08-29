@@ -11,18 +11,18 @@ bits = 64
 
 # Build options
 wasm_simd = yes
-embedded_nnue = yes
+embedded_nnue = no
 minify_js = yes
 assertion = no
 
 VPATH := $(VPATH):emscripten
-EM_CXXFLAGS +=
+EM_CXXFLAGS += -pthread
 EM_LDFLAGS += \
 	-s EXPORT_ES6=1 -s ENVIRONMENT=worker -s STRICT=1 \
 	-s ASYNCIFY=1 -s 'ASYNCIFY_IMPORTS=["emscripten_utils_getline_impl"]' \
-	-s USE_PTHREADS=1 -s PROXY_TO_PTHREAD=1 \
+	-s PROXY_TO_PTHREAD=1 \
 	-s ALLOW_MEMORY_GROWTH=1 -s INITIAL_MEMORY=$$((1 << 27)) -s MAXIMUM_MEMORY=$$((1 << 31)) \
-	-s FILESYSTEM=1 -s EXPORTED_RUNTIME_METHODS=["FS"] \
+	-s FORCE_FILESYSTEM -s EXPORTED_RUNTIME_METHODS=["FS"] \
 	-s ALLOW_UNIMPLEMENTED_SYSCALLS
 # emscripten.org/docs/tools_reference/settings_reference.html
 
