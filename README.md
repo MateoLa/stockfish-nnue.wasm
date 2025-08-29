@@ -1,6 +1,6 @@
 <div align="center">
 
-	[[stockfish128-logo]]([website-link])
+	[![Stockfish][stockfish128-logo]]([website-link])
 
 	<h3>Stockfish</h3>
 
@@ -55,5 +55,3 @@ Thanks to the [Stockfish](https://github.com/official-stockfish/Stockfish) team 
 
 The nnue-wasm compilation method (emscripten directory && Makefile) are based on [Hiroshi Ogawa](https://github.com/hi-ogawa/Stockfish) github repo.
 
-[stockfish128-logo]: https://stockfishchess.org/images/logo/icon_128x128.png
-[website-link]: https://stockfishchess.org
