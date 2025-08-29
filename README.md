@@ -5,7 +5,6 @@
 <h3>Stockfish</h3>
 
 <p>A free and strong UCI chess engine.</p>
-<br>
 <p>Analyzes chess positions and computes optimal moves.</p>
 </div>
 
