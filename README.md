@@ -1,6 +1,6 @@
 <div align="center">
 
-[https://stockfishchess.org/images/logo/icon_128x128.png](https://stockfishchess.org)
+<img src=https://stockfishchess.org/images/logo/icon_128x128.png></img>(https://stockfishchess.org)
 
 <h3>Stockfish</h3>
 
