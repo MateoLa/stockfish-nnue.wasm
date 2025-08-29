@@ -1,10 +1,11 @@
 <div align="center">
 
-	[stockfish128-logo][website-link]
+	[[stockfish128-logo]][website-link]
 
 	<h3>Stockfish</h3>
 
-	A free and strong UCI chess engine. <br>	
+	A free and strong UCI chess engine. 
+  <br>	
 	Analyzes chess positions and computes optimal moves.
 
 </div>
