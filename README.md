@@ -1,13 +1,12 @@
 <div align="center">
 
-  [![Stockfish][https://stockfishchess.org/images/logo/icon_128x128.png]](https://stockfishchess.org)
+[![Stockfish][https://stockfishchess.org/images/logo/icon_128x128.png]](https://stockfishchess.org)
 
-	<h3>Stockfish</h3>
+<h3>Stockfish</h3>
 
-	A free and strong UCI chess engine. 
-  <br>	
-	Analyzes chess positions and computes optimal moves.
-
+<p>A free and strong UCI chess engine.</p>
+<br>
+<p>Analyzes chess positions and computes optimal moves.</p>
 </div>
 
 #### Description of the universal chess interface - UCI protocol
