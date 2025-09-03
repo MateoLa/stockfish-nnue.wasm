@@ -22,7 +22,8 @@ EM_LDFLAGS += \
 	-s ASYNCIFY=1 -s 'ASYNCIFY_IMPORTS=["emscripten_utils_getline_impl"]' \
 	-s PROXY_TO_PTHREAD=1 \
 	-s ALLOW_MEMORY_GROWTH=1 -s INITIAL_MEMORY=$$((1 << 27)) -s MAXIMUM_MEMORY=$$((1 << 31)) \
-	-s FORCE_FILESYSTEM -s EXPORTED_RUNTIME_METHODS=["FS"] \
+	-s WASMFS -s MALLOC=dlmalloc -s FORCE_FILESYSTEM \
+	-s EXPORTED_RUNTIME_METHODS=["FS"] \
 	-s ALLOW_UNIMPLEMENTED_SYSCALLS
 # emscripten.org/docs/tools_reference/settings_reference.html
 
@@ -57,10 +58,15 @@ EXTRACXXFLAGS += \
 EXTRALDFLAGS += $(EM_LDFLAGS)
 
 EM_ARTIFACTS += \
-	stockfish.js stockfish.wasm stockfish.worker.js \
-	emscripten/embedded_nnue.cpp \
-	emscripten/public/stockfish.js emscripten/public/stockfish.wasm emscripten/public/stockfish.worker.js \
-	emscripten/public/AUTHORS emscripten/public/Copying.txt
+	stockfish.js stockfish.wasm \
+	emscripten/public/stockfish.js emscripten/public/stockfish.wasm
+
+
+# ifeq ($(embedded_nnue),yes)
+# emscripten/embedded_nnue.cpp: net
+#	test $@ -nt $(nnuenet) || node emscripten/misc/embedded_nnue.js < $(nnuenet) > $@
+# endif
+
 
 ifeq ($(embedded_nnue),yes)
 emscripten/embedded_nnue.cpp:
@@ -74,10 +80,10 @@ emscripten/embedded_nnue.cpp:
 endif
 
 emscripten_copy_files:
-	cp -f ../AUTHORS ../Copying.txt stockfish.js stockfish.wasm emscripten/public
-	cat stockfish.worker.js emscripten/worker-postamble.js > emscripten/public/stockfish.worker.js
+	cp -f stockfish.js stockfish.wasm emscripten/public
+#	cat stockfish.worker.js emscripten/worker-postamble.js > emscripten/public/stockfish.worker.js
 
 emscripten_build: build emscripten_copy_files
 
-# emscripten_clean: clean
-# 	@rm -f $(EM_ARTIFACTS)
+emscripten_clean: clean
+	@rm -f $(EM_ARTIFACTS)
