@@ -44,9 +44,7 @@ ifeq ($(wasm_simd),yes)
 	SRCS += emscripten/wasm_simd.cpp
 endif
 
-ifeq ($(embedded_nnue),yes)
-	SRCS += emscripten/embedded_nnue.cpp
-else
+ifeq ($(embedded_nnue),no)
 	EM_CXXFLAGS += -DNNUE_EMBEDDING_OFF
 endif
 
