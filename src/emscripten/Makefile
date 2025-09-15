@@ -11,8 +11,8 @@ bits = 64
 
 # Build options
 wasm_simd = yes
-embedded_nnue = no
-minify_js = yes
+embedded_nnue = yes
+minify_js = no
 assertion = no
 
 VPATH := $(VPATH):emscripten
@@ -44,7 +44,9 @@ ifeq ($(wasm_simd),yes)
 	SRCS += emscripten/wasm_simd.cpp
 endif
 
-ifeq ($(embedded_nnue),no)
+ifeq ($(embedded_nnue),yes)
+	SRCS += nnue/network.cpp
+else
 	EM_CXXFLAGS += -DNNUE_EMBEDDING_OFF
 endif
 
